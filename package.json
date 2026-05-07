@@ -1,0 +1,60 @@
+{
+  "name": "golanci-lint-action",
+  "version": "9.2.0",
+  "private": true,
+  "description": "golangci-lint github action",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc && ncc build -o dist/run/ src/main.ts && ncc build -o dist/post_run/ src/post_main.ts",
+    "watched_build_main": "tsc && ncc build -w -o dist/run/ src/main.ts",
+    "watched_build_post_main": "tsc && ncc build -w -o dist/post_run/ src/post_main.ts",
+    "type-check": "tsc",
+    "lint": "eslint --max-warnings 1 **/*.ts --cache",
+    "lint-fix": "eslint **/*.ts --cache --fix",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "all": "npm run build && npm run format-check && npm run lint",
+    "local": "npm run build && act -j test -b",
+    "local-full-version": "npm run build && act -j test-full-version -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-security/golangci-lint-action.git"
+  },
+  "author": "step-security",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "dependencies": {
+    "@actions/cache": "^5.0.3",
+    "@actions/core": "^2.0.2",
+    "@actions/github": "^7.0.0",
+    "@actions/http-client": "^3.0.0",
+    "@actions/tool-cache": "^3.0.0",
+    "@octokit/plugin-retry": "^6.1.0",
+    "axios": "^1.16.0",
+    "tmp": "^0.2.5",
+    "which": "^6.0.1",
+    "yaml": "^2.8.3"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^2.0.5",
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^9.39.2",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "@vercel/ncc": "^0.38.4",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.2",
+    "typescript": "^5.9.3",
+    "@types/node": "^25.0.10",
+    "@types/tmp": "^0.2.6",
+    "@types/which": "^3.0.4"
+  }
+}
