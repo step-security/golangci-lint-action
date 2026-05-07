@@ -1,0 +1,87 @@
+# https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
+name: "Golangci-lint"
+description: "Official golangci-lint action with line-attached annotations for found issues, caching, and parallel execution."
+author: "step-security"
+inputs:
+  version:
+    description: |
+      The version of golangci-lint to use.
+      When `install-mode` is:
+      - `binary` (default): the value can be v2.3, v2.3.4, or `latest` to use the latest version.
+      - `goinstall`: the value can be v2.3.4, `latest`, or the hash of a commit.
+      - `none`: the value is ignored.
+    required: false
+  version-file:
+    description: |
+      Gets the version of golangci-lint to use from a file.
+      The path must be relative to the root of the project, or the `working-directory` if defined.
+      This parameter supports `.golangci-lint-version`, and `.tool-versions` files.
+      Only works with `install-mode: binary` (the default).
+    required: false
+  install-mode:
+    description: "The mode to install golangci-lint. It can be 'binary', 'goinstall', or 'none'."
+    default: "binary"
+    required: false
+  install-only:
+    description: "Only install golangci-lint. It does not run golangci-lint."
+    default: 'false'
+    required: false
+  working-directory:
+    description: "golangci-lint working directory. The default is the project root."
+    required: false
+  github-token:
+    description: "The token is used for fetching the patch of a pull request to show only new issues."
+    default: ${{ github.token }}
+    required: false
+  verify:
+    description: "If set to true, the action verifies the configuration file against the JSONSchema."
+    default: 'true'
+    required: false
+  only-new-issues:
+    description: "If set to true and the action runs on a pull request, the action outputs only newly found issues."
+    default: 'false'
+    required: false
+  args:
+    description: "golangci-lint command line arguments."
+    default: ""
+    required: false
+  skip-cache:
+    description: |
+      If set to true, all caching functionality will be completely disabled.
+      This takes precedence over all other caching options.
+    default: 'false'
+    required: false
+  skip-save-cache:
+    description: |
+      If set to true, the action will not save any caches,
+      but it may still restore existing caches, subject to other options.
+    default: 'false'
+    required: false
+  cache-invalidation-interval:
+    description: "Periodically invalidate a cache when new code is added (number of days)."
+    default: '7'
+    required: false
+  problem-matchers:
+    description: "Force the usage of the embedded problem matchers."
+    default: 'false'
+    required: false
+  debug:
+    description: |
+      Debug options for the action.
+      List of comma separated options, the values are `cache`, `clean`.
+      example: "cache,clean"
+    default: ""
+    required: false
+  experimental:
+    description: |
+      Experimental options for the action.
+      List of comma separated options.
+    default: ""
+    required: false
+runs:
+  using: "node24"
+  main: "dist/run/index.js"
+  post: "dist/post_run/index.js"
+branding:
+  icon: "shield"
+  color: "white"
