@@ -1,0 +1,19 @@
+[[IgnoredVulns]]
+id = "GHSA-2mjp-6q6p-2qxm"
+reason = "Affects undici HTTP client via @actions/github@7. This action only uses github.context from @actions/github (no HTTP requests via undici). Upgrading to @actions/github@9 (which fixes this via undici@6) requires ESM-only modules incompatible with the current ncc CJS build."
+
+[[IgnoredVulns]]
+id = "GHSA-4992-7rv2-5pvq"
+reason = "Affects undici HTTP client via @actions/github@7. This action only uses github.context from @actions/github (no HTTP requests via undici). Upgrading to @actions/github@9 (which fixes this via undici@6) requires ESM-only modules incompatible with the current ncc CJS build."
+
+[[IgnoredVulns]]
+id = "GHSA-g9mf-h72j-4rw9"
+reason = "Affects undici HTTP client via @actions/github@7. This action only uses github.context from @actions/github (no HTTP requests via undici). Upgrading to @actions/github@9 (which fixes this via undici@6) requires ESM-only modules incompatible with the current ncc CJS build."
+
+[[IgnoredVulns]]
+id = "GHSA-v9p9-hfj2-hcw8"
+reason = "Affects undici HTTP client via @actions/github@7. This action only uses github.context from @actions/github (no HTTP requests via undici). Upgrading to @actions/github@9 (which fixes this via undici@6) requires ESM-only modules incompatible with the current ncc CJS build."
+
+[[IgnoredVulns]]
+id = "GHSA-vrm6-8vpv-qv8q"
+reason = "Affects undici HTTP client via @actions/github@7. This action only uses github.context from @actions/github (no HTTP requests via undici). Upgrading to @actions/github@9 (which fixes this via undici@6) requires ESM-only modules incompatible with the current ncc CJS build."
