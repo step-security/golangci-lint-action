@@ -1,0 +1,51 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /fixtures/go-mod
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /fixtures/go-tool
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /fixtures/monorepo/a
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /fixtures/monorepo/a/suba
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /fixtures/monorepo/b
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /fixtures/monorepo/c
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /fixtures/plugins
+    schedule:
+      interval: daily
+
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
