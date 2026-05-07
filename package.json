@@ -29,15 +29,10 @@
   "dependencies": {
     "@actions/cache": "^5.0.3",
     "@actions/core": "^2.0.2",
-    "@actions/exec": "^2.0.0",
     "@actions/github": "^7.0.0",
     "@actions/http-client": "^3.0.0",
     "@actions/tool-cache": "^3.0.0",
     "@octokit/plugin-retry": "^6.1.0",
-    "@types/node": "^25.0.10",
-    "@types/semver": "^7.7.1",
-    "@types/tmp": "^0.2.6",
-    "@types/which": "^3.0.4",
     "axios": "^1.16.0",
     "tmp": "^0.2.5",
     "which": "^6.0.1",
@@ -57,6 +52,9 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^17.5.0",
     "prettier": "^3.8.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "@types/node": "^25.0.10",
+    "@types/tmp": "^0.2.6",
+    "@types/which": "^3.0.4"
   }
 }
