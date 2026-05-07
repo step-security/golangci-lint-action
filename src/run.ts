@@ -290,6 +290,7 @@ export async function run(): Promise<void> {
 
 export async function postRun(): Promise<void> {
   try {
+    await validateSubscription()
     await saveCache()
   } catch (error) {
     core.error(`Failed to post-run: ${error}, ${error.stack}`)

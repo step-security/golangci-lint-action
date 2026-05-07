@@ -247,11 +247,11 @@ You will also likely need to add the following `.gitattributes` file to ensure t
 * `v7.0.0` supports golangci-lint v2 only.
 * `v6.0.0+` removes `annotations` option, removes the default output format (`github-actions`).
 * `v5.0.0+` removes `skip-pkg-cache` and `skip-build-cache` because the cache related to Go itself is already handled by `actions/setup-go`.
-* `v4.0.0+` requires an explicit `actions/setup-go` installation step before using this action: `uses: actions/setup-go@v5`.
+* `v4.0.0+` requires an explicit `actions/setup-go` installation step before using this action: `uses: actions/setup-go@v6`.
   The `skip-go-installation` option has been removed.
 * `v2.0.0+` works with `golangci-lint` version >= `v1.28.3`
-* `v1.2.2` is deprecated because we forgot to change the minimum version of `golangci-lint` to `v1.28.3` ([issue](https://github.com/step-security/golangci-lint-action/issues/39))
-* `v1.2.1` works with `golangci-lint` version >= `v1.14.0` ([issue](https://github.com/step-security/golangci-lint-action/issues/39))
+* `v1.2.2` is deprecated because we forgot to change the minimum version of `golangci-lint` to `v1.28.3`
+* `v1.2.1` works with `golangci-lint` version >= `v1.14.0`
 
 ## Options
 

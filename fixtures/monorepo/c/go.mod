@@ -1,3 +1,3 @@
-module github.com/golangci/actionc
+module github.com/step-security/actionc
 
 go 1.24.0
