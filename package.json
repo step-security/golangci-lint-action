@@ -36,7 +36,7 @@
     "axios": "^1.16.0",
     "tmp": "^0.2.5",
     "which": "^6.0.1",
-    "yaml": "^2.8.3"
+    "yaml": "^2.8.4"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.5",
