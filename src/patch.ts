@@ -1,6 +1,5 @@
 import * as core from "@actions/core"
 import * as github from "@actions/github"
-import { Context } from "@actions/github/lib/context"
 import * as pluginRetry from "@octokit/plugin-retry"
 import fs from "fs"
 import path from "path"
@@ -33,7 +32,7 @@ export async function fetchPatch(): Promise<string> {
   }
 }
 
-async function fetchPullRequestPatch(ctx: Context): Promise<string> {
+async function fetchPullRequestPatch(ctx: typeof github.context): Promise<string> {
   const pr = ctx.payload.pull_request
   if (!pr) {
     core.warning(`No pull request in context`)
@@ -76,7 +75,7 @@ async function fetchPullRequestPatch(ctx: Context): Promise<string> {
   }
 }
 
-async function fetchPushPatch(ctx: Context): Promise<string> {
+async function fetchPushPatch(ctx: typeof github.context): Promise<string> {
   const octokit = github.getOctokit(core.getInput(`github-token`, { required: true }), {}, pluginRetry.retry)
 
   let patch: string

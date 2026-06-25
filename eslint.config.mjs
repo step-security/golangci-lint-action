@@ -44,6 +44,14 @@ export default defineConfig([{
         sourceType: "commonjs",
     },
 
+    settings: {
+        "import/resolver": {
+            typescript: {
+                alwaysTryTypes: true,
+            },
+        },
+    },
+
     rules: {
         "import/first": "error",
         "import/newline-after-import": "error",
