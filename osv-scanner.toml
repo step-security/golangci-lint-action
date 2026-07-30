@@ -1,3 +1,11 @@
 [[IgnoredVulns]]
+id = "GO-2026-5024"
+reason = "golang.org/x/sys vulnerability; only in fixture dependencies (golangci-lint test data), not in production code"
+
+[[IgnoredVulns]]
+id = "GO-2026-5970"
+reason = "golang.org/x/text vulnerability; only in fixture dependencies (golangci-lint test data), not in production code"
+
+[[IgnoredVulns]]
 id = "GHSA-mh99-v99m-4gvg"
 reason = "brace-expansion 1.1.16: transitive dev-only dependency (@eslint/eslintrc → minimatch → brace-expansion); does not reach production dependencies"
