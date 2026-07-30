@@ -1,0 +1,3 @@
+[[IgnoredVulns]]
+id = "GO-2025-3750"
+reason = "stdlib vulnerability in Go 1.24.0, will be fixed by upgrading to 1.24.4"
