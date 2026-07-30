@@ -1,3 +1,3 @@
 module github.com/step-security/sample
 
-go 1.24.0
+go 1.24.4

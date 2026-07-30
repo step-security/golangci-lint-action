@@ -1,6 +1,6 @@
 module github.com/step-security/sample
 
-go 1.24.0
+go 1.24.4
 
 require github.com/golangci/golangci-lint/v2 v2.5.0
 
